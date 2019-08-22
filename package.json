@@ -1,13 +1,12 @@
 {
-  "name": "start-lit-element",
+  "name": "polymer-framer-components",
   "version": "1.0.0",
-  "description": "start-lit-element",
-  "repository": "https://github.com/PolymerLabs/start-lit-element.git",
+  "description": "polymer-framer-components",
   "main": "start-lit-element.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "The Polymer Authors",
+  "author": "Addison Schultz",
   "license": "BSD-3-Clause",
   "dependencies": {
     "@webcomponents/webcomponentsjs": "latest",
