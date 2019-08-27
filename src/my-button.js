@@ -8,7 +8,7 @@ export class MyButton extends LitElement {
     return {
       text: { type: String },
       fluid: { type: Boolean },
-      disabled: { type: Boolean },
+      amDisabled: { type: Boolean },
       kind: { type: String }
     };
   }
@@ -19,7 +19,7 @@ export class MyButton extends LitElement {
     super();
     this.text = "Download App";
     this.fluid = false;
-    this.disabled = false;
+    this.amDisabled = false;
     this.kind = "default";
   }
   /**
@@ -68,7 +68,7 @@ export class MyButton extends LitElement {
       }
 
       /* Disabled Styles */
-      .disabled {
+      .amDisabled {
         color: #aaa;
         pointer-events: none;
       }
@@ -117,8 +117,8 @@ export class MyButton extends LitElement {
   render() {
     return html`
       <button
-        class="${this.fluid ? "fluid" : ""} ${this.disabled
-          ? "disabled"
+        class="${this.fluid ? "fluid" : ""} ${this.amDisabled
+          ? "amDisabled"
           : ""}  ${this.kind ? this.kind : ""}"
       >
         ${this.text}
