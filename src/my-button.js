@@ -127,5 +127,4 @@ export class MyButton extends LitElement {
   }
 }
 // Register the new element with the browser.
-// Removing to isolate where components are defined in Framer X
-// customElements.define("my-button", MyButton);
+customElements.define("my-button", MyButton);
