@@ -1,6 +1,6 @@
 import { LitElement, html, css } from "lit-element";
 
-class MyButton extends LitElement {
+export class MyButton extends LitElement {
   /**
    * Define properties for button
    */
