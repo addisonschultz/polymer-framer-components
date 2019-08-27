@@ -1,6 +1,6 @@
 {
   "name": "polymer-framer-components",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "polymer-framer-components",
   "main": "./src/polymer.js",
   "scripts": {
