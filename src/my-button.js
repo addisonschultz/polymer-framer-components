@@ -68,7 +68,7 @@ export class MyButton extends LitElement {
       }
 
       /* Disabled Styles */
-      button:disabled {
+      .disabled {
         color: #aaa;
         pointer-events: none;
       }
@@ -117,8 +117,9 @@ export class MyButton extends LitElement {
   render() {
     return html`
       <button
-        class="${this.fluid ? "fluid" : ""} ${this.kind ? this.kind : ""}"
-        disabled=${this.disabled}
+        class="${this.fluid ? "fluid" : ""} ${this.disabled
+          ? "disabled"
+          : ""}  ${this.kind ? this.kind : ""}"
       >
         ${this.text}
       </button>
