@@ -112,7 +112,11 @@ export class MyButton extends LitElement {
     `;
   }
   /**
-   * Render button template
+   * Render template
+   *
+   * @TODO
+   * Fix disabled state to work in Framer X with props.
+   * Relevant: https://vaadin.com/tutorials/lit-element/lit-element-templating-properties-and-events#_writing_a_template_with_lit_html
    */
   render() {
     return html`

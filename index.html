@@ -26,6 +26,9 @@
       };
       WebComponents.waitFor(async () => {
         import("./src/my-button.js");
+        import("./src/my-input.js");
+        import("./src/my-toggle.js");
+        import("./src/my-tooltip.js");
       });
     </script>
 
@@ -44,6 +47,38 @@
     <my-button></my-button>
     <my-button kind="primary"></my-button>
     <my-button kind="danger"></my-button>
-    <my-button amDisabled="false"></my-button>
+    <my-button disabled></my-button>
+    <br />
+    <hr />
+    <br />
+    <my-input placeholder="Email"></my-input>
+    <br />
+    <hr />
+    <my-input placeholder="Error" error="true"></my-input>
+    <br />
+    <hr />
+    <my-input placeholder="Disabled" disabled></my-input>
+    <br />
+    <hr />
+    <br />
+    <div>
+      <my-toggle />
+    </div>
+    <br />
+   <div>
+     <my-toggle on="true" />
+   </div>
+   <br />
+   <div>
+     <my-toggle disabled/>
+   </div>
+   <br>
+   <div>
+      <my-tooltip text="component" arrow="left"/>
+    </div>
+    <br>
+    <div>
+        <my-tooltip text="component" arrow="left" error/>
+      </div>
   </body>
 </html>
