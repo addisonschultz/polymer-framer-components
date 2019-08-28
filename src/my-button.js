@@ -119,6 +119,8 @@ export class MyButton extends LitElement {
    * Relevant: https://vaadin.com/tutorials/lit-element/lit-element-templating-properties-and-events#_writing_a_template_with_lit_html
    */
   render() {
+    console.log(this.disabled);
+
     return html`
       <button
         class="${this.fluid ? "fluid" : ""} ${this.disabled

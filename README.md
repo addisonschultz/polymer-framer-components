@@ -1,136 +1,74 @@
-# start-lit-element
+# Framer X / Polymer LitElement Components
 
-A simple Hello World for LitElement.
+This repository is an example of a few components based on the [framer-bridge-starter-kit](https://github.com/framer/framer-bridge-starter-kit) component library, but built entirely using Polymer LitElement Web Components.
 
-https://start-lit-element.firebaseapp.com/
+These components can be used within any Web Framework, but were designed to illustrate the workflow between maintaining a Web Component based Design System in [Framer X](https://www.framer.com/).
 
-* [Quick start](#quick-start)
-* [Detailed setup info](#detailed-setup-info)
-* [Browser compatibility and performance](#browser-compatibility-and-performance)
+---
 
-## Quick start
+## Components
 
-```
-npm install -g polymer-cli
-git clone https://github.com/PolymerLabs/start-lit-element
-cd start-lit-element
-npm install
-polymer serve
-```
+This package contains 4 main components:
 
-## Detailed setup info
+### `<my-button />`
 
-* [Clone](#clone-this-repo)
-* [Serve](#start-a-dev-server)
-* [Setup](#set-up-new-app)
-* [Build](#build-for-production-and-serve-locally)
-* [Deploy](#deploy)
+A flexible button with multiple props to change the appearance.
 
-### Clone this repo
+| Property | Type      | Description           | Default        |
+| -------- | --------- | --------------------- | -------------- |
+| text     | `string`  | Button text           | `Download App` |
+| fluid    | `boolean` | Width of button       | `true`         |
+| disabled | `boolean` | Button disabled state | `false`        |
+| kind     | `enum`    | Button Kind           | `default`      |
 
-```
-git clone https://github.com/PolymerLabs/start-lit-element
-```
+---
 
-### Start a dev server
+### `<my-input />`
 
-```
-npm install -g polymer-cli
-cd start-lit-element
-npm install
-polymer serve
-```
+An input field with props to change the appearance.
 
-### Set up new app
+| Property    | Type      | Description          | Default |
+| ----------- | --------- | -------------------- | ------- |
+| value       | `string`  | Input value          |         |
+| placeholder | `string`  | Input placeholder    | `Email` |
+| disabled    | `boolean` | Input disabled state | `false` |
+| error       | `boolean` | Input error state    | `false` |
 
-1. In index.html, update metadata stuff:
+---
 
-```html
-<!-- Change stuff here for your app -->
-<meta name="description" content="start-lit-element">
-<meta name="theme-color" content="#ffffff">
-<title>start-lit-element</title>
-```
+### `<my-toggle />`
 
-2. In index.html, uncomment the service worker registration code:
+A usable toggle with props to change it's state.
 
-```html
-<!-- Register service worker if supported. -->
-<!--
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js');
-  }
-</script> -->
-```
+| Property | Type      | Description           | Default |
+| -------- | --------- | --------------------- | ------- |
+| disabled | `boolean` | Toggle disabled state | `false` |
+| on       | `boolean` | Toggle on state       | `false` |
 
-3. In manifest.json, update the app description, etc:
+---
 
-```json
-"description": "start-lit-element",
-"start_url": "index.html",
-"name": "start-lit-element",
-"short_name": "start-lit-el",
-"background_color": "#ffffff",
-"theme_color":"#ffffff",
-```
+### `<my-tooltip />`
 
-4. Update your package.json if required
+A tooltip with props to change the appearance.
 
-5. In polymer.json, update your shell & entrypoint if required
+| Property | Type      | Description         | Default     |
+| -------- | --------- | ------------------- | ----------- |
+| arrow    | `enum`    | Arrow direction     | `left`      |
+| text     | `string`  | Tooltip text        | `Component` |
+| error    | `boolean` | Tooltip error state | `false`     |
 
-```
-"shell": "src/start-lit-element.js",
-"entrypoint": "index.html",
-```
+---
 
-6. Remember to update firebase.json and .firebaserc for a real deployment!
+## Using Components
 
-### Build for production and serve locally
+Follow the steps below to use these components in your project.
 
-Build your project and serve the build locally:
+### **Framer X**
 
-```
-polymer build
-polymer serve build/default
-```
+Check out this [repository](https://github.com/framer/framer-bridge-polymer-kit) to learn more about how these components are maintained in Framer X, and see a working example of these living in a Framer X project.
 
-If you changed significant stuff (e.g. filenames, folder structure, installed other modules, etc), edit your polymer.json file to configure your build correctly. See the [Polymer CLI documentation](https://www.polymer-project.org/3.0/docs/tools/polymer-json) for more info.
+Framer X uses React under the hood, but that doesn't mean you can't use your custom Web Components. If you're new to React, a good place to start is [here](https://reactjs.org/docs/getting-started.html).
 
-### Deploy
+In order to use Polymer LitElements in Framer X, you need to make sure you `export` the class that is defined in the component file. See [this example](https://github.com/addisonschultz/polymer-framer-components/blob/master/src/my-button.js#L3) for and idea of how this looks.
 
-1.  [Set up Firebase CLI tools](https://firebase.google.com/docs/cli/).
-2.  [Create a new Firebase project](https://firebase.google.com/console).
-3.  Update firebase.json and .firebaserc with your own app details.   
-4.  Deploy.
-
-    ```
-    firebase deploy
-    ```
-
-See the [Firebase CLI Reference](https://firebase.google.com/docs/cli) for more info.
-
-## Browser compatibility and performance
-
-At the time of writing (Dec 11 2018) this app was scoring 100% on all Lighthouse audits when deployed, and was working fine on the most recent versions of Chrome, Safari, Firefox, and Edge.
-
-Let me know of any [issues](https://github.com/PolymerLabs/start-lit-element/issues).
-
-## Known issues
-
-(All browsers) Dynamic `import` warning:
-
-```
-Could not resolve module specifier "require" in file "..src/start-lit-element.js".
-```
-
-See https://github.com/Polymer/tools/issues/131.
-
-(IE11 and Edge) Warning due to `<!--!` in built HTML:
-
-```
-Unexpected character: U+0021 EXCLAMATION MARK (!)
-Unexpected character in comment end. Expected "-->"
-```
-
-See https://github.com/Polymer/polymer-cli/issues/779.
+This way, you can import the component and define the custom element within Framer X. See [`Polymer.tsx`](https://github.com/framer/framer-bridge-polymer-kit/blob/master/code/utils/Polymer.tsx) in this Framer X project to see how you can import all your components at once.
